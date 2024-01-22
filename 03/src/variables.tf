@@ -39,7 +39,36 @@ variable "vm_web_yandex_compute_image" {
   description = "Image OC"
 }
 
-variable "test_for" {
-  type        = list(string)
-  default     = ["1","2","3"]
+variable "instance_configurations_1" {
+  type = list(map(string))
+
+  default = [
+    {
+      name        = "web-server"
+      instance_type = "t2.micro"
+      ami_id      = "ami-0abc123"
+    },
+    {
+      name        = "database-server"
+      instance_type = "t2.large"
+      ami_id      = "ami-1def456"
+    }
+  ]
+}
+
+variable "instance_configurations_2" {
+  type = list(map(string))
+
+  default = [
+    {
+      name        = "web-server"
+      instance_type = "t2.micro"
+      ami_id      = "ami-0abc123"
+    },
+    {
+      name        = "database-server"
+      instance_type = "t2.large"
+      ami_id      = "ami-1def456"
+    }
+  ]
 }
