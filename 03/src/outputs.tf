@@ -17,7 +17,7 @@ output "vm_for_each_and_count_test" {
 
 output "just_test" {
   value = [
-    for i in var.instance_configurations_1 : {
+    for i in merge(var.instance_configurations_1,var.instance_configurations_2) : {
       name = i.name
       ami = i.ami_id
     }
