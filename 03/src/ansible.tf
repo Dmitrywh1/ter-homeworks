@@ -15,7 +15,7 @@ resource "null_resource" "web_hosts_provision" {
 
   #Добавление ПРИВАТНОГО ssh ключа в ssh-agent
   provisioner "local-exec" {
-    command = "eval $(ssh-agent) | ssh-add ~/.ssh/vm"
+    command = "eval $(ssh-agent) | ssh-add ~/.ssh/vm.pub"
   }
 
   #Костыль!!! Даем ВМ 60 сек на первый запуск. Лучше выполнить это через wait_for port 22 на стороне ansible
