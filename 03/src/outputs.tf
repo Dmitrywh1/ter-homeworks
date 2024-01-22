@@ -1,4 +1,4 @@
-output "vm_for_each_and_count_test" {
+output "vm_for_each_and_count" {
   value = [
     [
       for i in yandex_compute_instance.web : {
