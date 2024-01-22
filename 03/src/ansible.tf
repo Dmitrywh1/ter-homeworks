@@ -11,7 +11,7 @@ resource "local_file" "hosts_cfg" {
 
 resource "null_resource" "web_hosts_provision" {
   #Ждем создания инстанса
-  depends_on = [yandex_compute_instance.db, yandex_compute_instance.web]
+  depends_on = [yandex_compute_instance.web]
 
   #Добавление ПРИВАТНОГО ssh ключа в ssh-agent
   provisioner "local-exec" {
