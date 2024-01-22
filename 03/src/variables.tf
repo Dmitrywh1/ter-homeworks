@@ -61,12 +61,12 @@ variable "instance_configurations_2" {
 
   default = [
     {
-      name        = "web-server"
+      name        = "web-server_2"
       instance_type = "t2.micro"
       ami_id      = "ami-0abc123"
     },
     {
-      name        = "database-server"
+      name        = "database-server_2"
       instance_type = "t2.large"
       ami_id      = "ami-1def456"
     }
