@@ -11,5 +11,5 @@ output "vm_list" {
       id   = vm.id
       fqdn = vm.network_interface.0.ip_address
     }
-  ]...)
+  ])
 }
