@@ -39,3 +39,7 @@ variable "vm_web_yandex_compute_image" {
   description = "Image OC"
 }
 
+variable "test_for" {
+  type        = list(string)
+  default     = ["1", "2", "3"]
+}
