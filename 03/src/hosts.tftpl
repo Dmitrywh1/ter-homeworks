@@ -24,8 +24,8 @@ ${i["name"]}   ansible_host=${i["network_interface"][0]["nat_ip_address"]} fqdn=
 %{~ endfor ~}
 
 %{ if is_nat == true ~}
-${1}:${2}
+${nat_ip_address}:${ip_address}
 %{ else ~}
-${3}
+${nat_ip_address}
 %{ endif ~}
 
