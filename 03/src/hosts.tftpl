@@ -17,10 +17,15 @@ ${i["name"]}   ansible_host=${i["network_interface"][0]["nat_ip_address"]} fqdn=
 %{~ endfor ~}
 
 
+
 [storage2]
 %{~ for i in storage ~}
-
-${i["name"]}   ansible_host=${if is_nat == true}${nat_ip_address}:${ip_address}${else}${nat_ip_address}${endif}
- fqdn=${i["fqdn"]}
+${i["name"]}   ansible_host=${i["network_interface"][0]["nat_ip_address"]} fqdn=${i["fqdn"]}
 %{~ endfor ~}
+
+%{ if is_nat == true ~}
+${1}:${2}
+%{ else ~}
+${3}
+%{ endif ~}
 
