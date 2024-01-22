@@ -15,20 +15,3 @@ output "vm_for_each_and_count_test" {
   )
 }
 
-output "just_test" {
-  value = [
-    for i, a in var.instance_configurations_1 : {
-      name = a.name
-      ami = a.ami_id
-    }
-  ]
-}
-
-output "just_test_2" {
-  value = [
-    for i, a in var.instance_configurations_2 : {
-      name = a.name
-      ami = a.ami_id
-    }
-  ]
-}
