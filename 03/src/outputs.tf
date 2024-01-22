@@ -1,17 +1,16 @@
 output "vm_for_each_and_count_test" {
   value = merge(
-    { for macro, mini in yandex_compute_instance.db : macro => {
-        name = mini.name
-        id   = mini.id
-        fqdn = mini.fqdn
+    { for vm_name, vm_instance in yandex_compute_instance.db : vm_name => {
+        name = vm_instance.name
+        id   = vm_instance.id
+        fqdn = yandex_compute_instance.db[vm_name].network_interface.0.ip_address
       }
     },
-    { for macro, mini in yandex_compute_instance.web : macro => {
-        name = mini.name
-        id   = mini.id
-        fqdn = mini.fqdn
+    { for vm_name, vm_instance in yandex_compute_instance.web : vm_name => {
+        name = vm_instance.name
+        id   = vm_instance.id
+        fqdn = yandex_compute_instance.web[vm_name].network_interface.0.ip_address
       }
     }
   )
 }
-
