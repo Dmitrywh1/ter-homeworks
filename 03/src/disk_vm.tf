@@ -30,7 +30,7 @@ resource "yandex_compute_instance" "task_3" {
 
   network_interface {
     subnet_id = yandex_vpc_subnet.develop.id
-    nat       = false
+    nat       = var.task_3.vm.instance_network_nat
     security_group_ids = [yandex_vpc_security_group.example.id]
   }
 
