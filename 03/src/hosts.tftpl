@@ -18,14 +18,11 @@ ${i["name"]}   ansible_host=${i["network_interface"][0]["nat_ip_address"]} fqdn=
 
 
 
-[storage2]
-%{~ for i in storage ~}
-${i["name"]}   ansible_host=${i["network_interface"][0]["nat_ip_address"]} fqdn=${i["fqdn"]}
-%{~ endfor ~}
+% var age = 25;
 
-%{ if is_nat == true ~}
-${nat_ip_address}:${ip_address}
-%{ else ~}
-${nat_ip_address}
-%{ endif ~}
+% if (age < 18) {
+    You are underage.
+% } else {
+    You are an adult.
+% }
 
