@@ -41,5 +41,5 @@ variable "vm_web_yandex_compute_image" {
 
 variable "test_for" {
   type        = list(string)
-  default     = ["1", "2", "3"]
+  default     = ["1","2","3"]
 }
