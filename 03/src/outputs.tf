@@ -23,3 +23,12 @@ output "just_test" {
     }
   ]
 }
+
+output "just_test_2" {
+  value = [
+    for i, a in var.instance_configurations_2 : {
+      name = a.name
+      ami = a.ami_id
+    }
+  ]
+}
