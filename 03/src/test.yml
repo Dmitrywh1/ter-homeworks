@@ -8,6 +8,6 @@
   tasks:
     - name: Install Nginx Web Server on Debian Family
       apt:
-        name: nginnnx
+        name: nginx
         state: latest
         update_cache: yes
