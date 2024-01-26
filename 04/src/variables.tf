@@ -91,6 +91,6 @@ variable packages {
 }
 
 variable username {
-  type    = list
+  type    = string
   default = "ubuntu"
 }
