@@ -11,7 +11,7 @@ resource "yandex_vpc_subnet" "develop" {
   v4_cidr_blocks = ["10.0.1.0/24"]
 }
 
-module "test-vm" {
+module "marketing" {
   source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=1.0.0"
   env_name       = var.vm.analytics.env_name
   network_id     = yandex_vpc_network.develop.id
@@ -29,7 +29,7 @@ module "test-vm" {
 
 }
 
-module "example-vm" {
+module "analytics" {
   source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=1.0.0"
   env_name       = var.vm.marketing.env_name
   network_id     = yandex_vpc_network.develop.id
@@ -51,8 +51,8 @@ data template_file "userdata" {
   template = file("${path.module}/templates/userdata.yaml")
 
   vars = {
-    username           = var.username
-    ssh_public_key     = file(local.ssh_public_key)
+    username           = var.userdata.username
+    ssh_public_key     = var.userdata.ssh_public_key
     packages           = jsonencode(var.packages)
   }
 }

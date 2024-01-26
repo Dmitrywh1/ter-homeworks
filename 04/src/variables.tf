@@ -90,7 +90,10 @@ variable packages {
   default = []
 }
 
-variable username {
-  type    = string
-  default = "ubuntu"
+variable userdata {
+  type    = map(string)
+  default = {
+    username = "ubuntu"
+    ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJXrG37ahpXCptSBiQG4ukIF6X+Xm6NyY0zlsUlXn0DX root@docker"
+  }
 }
