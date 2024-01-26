@@ -55,7 +55,7 @@ module "analytics" {
 
 }
 
-data template_file "userdata" {
+data template_file "cloudinit" {
   template = file("${path.module}/cloud-init.yml")
 
   vars = {
