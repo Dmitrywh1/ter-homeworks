@@ -66,7 +66,7 @@ variable "vm" {
   }))
   default = {
     marketing = {
-      env_name       = "marketing"
+      env_name       = "dev"
       subnet_zones   = "ru-central1-a"
       instance_name  = "web"
       instance_count = 1
@@ -74,7 +74,7 @@ variable "vm" {
       public_ip      = true
     }
     analytics = {
-      env_name       = "analytics"
+      env_name       = "stage"
       subnet_zones   = "ru-central1-a"
       instance_name  = "web"
       instance_count = 1
