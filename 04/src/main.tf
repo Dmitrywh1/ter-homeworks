@@ -59,8 +59,8 @@ data template_file "userdata" {
   template = file("${path.module}/cloud-init.yml")
 
   vars = {
-    username           = var.userdata.username
-    ssh_public_key     = file(var.userdata.ssh_public_key)
+#    username           = var.userdata.username
+    ssh_public_key     = file(var.ssh)
 #    packages           = jsonencode(var.packages)
   }
 }
