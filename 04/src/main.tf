@@ -15,7 +15,7 @@ module "test-vm" {
   source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=1.0.0"
   env_name       = var.vm.analytics.env_name
   network_id     = yandex_vpc_network.develop.id
-  subnet_zones   = var.vm.analytics.subnet_zones
+  subnet_zones   = [var.vm.analytics.subnet_zones]
   subnet_ids     = [yandex_vpc_subnet.develop.id]
   instance_name  = var.vm.analytics.instance_name
   instance_count = var.vm.analytics.instance_count
@@ -33,7 +33,7 @@ module "example-vm" {
   source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=1.0.0"
   env_name       = var.vm.marketing.env_name
   network_id     = yandex_vpc_network.develop.id
-  subnet_zones   = var.vm.marketing.subnet_zones
+  subnet_zones   = [var.vm.marketing.subnet_zones]
   subnet_ids     = [yandex_vpc_subnet.develop.id]
   instance_name  = var.vm.marketing.instance_name
   instance_count = var.vm.marketing.instance_count
