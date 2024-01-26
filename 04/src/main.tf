@@ -22,6 +22,10 @@ module "marketing" {
   image_family   = var.vm.analytics.image_family
   public_ip      = var.vm.analytics.public_ip
 
+   labels = {
+    project = "marketing"
+  }
+
   metadata = {
     user-data          = data.template_file.cloudinit.rendered #Для демонстрации №3
     serial-port-enable = 1
@@ -39,6 +43,10 @@ module "analytics" {
   instance_count = var.vm.marketing.instance_count
   image_family   = var.vm.marketing.image_family
   public_ip      = var.vm.marketing.public_ip
+
+   labels = {
+    project = "analytics"
+  }
 
   metadata = {
     user-data          = data.template_file.cloudinit.rendered #Для демонстрации №3
