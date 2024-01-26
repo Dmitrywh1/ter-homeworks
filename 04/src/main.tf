@@ -59,14 +59,10 @@ data template_file "userdata" {
   template = file("${path.module}/cloud-init.yml")
 
   vars = {
-#    username           = var.userdata.username
-    ssh_public_key     = file(var.ssh)
-#    packages           = jsonencode(var.packages)
+    username           = var.userdata.username
+    ssh_public_key     = file(var.userdata.ssh_public_key)
   }
 }
 
-#Пример передачи cloud-config в ВМ для демонстрации №3
-data "template_file" "cloudinit" {
-  template = file("./cloud-init.yml")
-}
+
 

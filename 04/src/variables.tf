@@ -90,7 +90,7 @@ variable packages {
   default = []
 }
 
-variable userdata1 {
+variable userdata {
   type    = map(string)
   default = {
     username = "ubuntu"
@@ -98,7 +98,3 @@ variable userdata1 {
   }
 }
 
-variable ssh {
-  type    = string
-  default = "~/.ssh/vm.pub"
-}
