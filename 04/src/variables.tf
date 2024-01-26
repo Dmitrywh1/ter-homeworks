@@ -87,7 +87,7 @@ variable "vm" {
 # for templatefile
 variable packages {
   type    = list
-  default = []
+  default = ["nginx"]
 }
 
 variable userdata {
