@@ -56,7 +56,7 @@ module "analytics" {
 }
 
 data template_file "userdata" {
-  template = file("${path.module}/templates/userdata.yaml")
+  template = file("${path.module}/cloud-init.yml")
 
   vars = {
     username           = var.userdata.username
