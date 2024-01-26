@@ -60,8 +60,8 @@ data template_file "userdata" {
 
   vars = {
     username           = var.userdata.username
-    ssh_public_key     = var.userdata.ssh_public_key
-    packages           = jsonencode(var.packages)
+    ssh_public_key     = file(var.userdata.ssh_public_key)
+#    packages           = jsonencode(var.packages)
   }
 }
 
