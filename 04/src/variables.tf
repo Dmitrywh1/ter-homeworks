@@ -54,4 +54,43 @@ variable "vm_db_name" {
 }
 
 
+# modules vm vars
+variable "vm" {
+  type = map(object({
+    env_name       = string
+    subnet_zones   = string
+    instance_name  = string
+    instance_count = number
+    image_family   = string
+    public_ip      = bool
+  }))
+  default = {
+    marketing = {
+      env_name       = "marketing"
+      subnet_zones   = "ru-central1-a"
+      instance_name  = "web"
+      instance_count = 1
+      image_family   = "ubuntu-2004-lts"
+      public_ip      = true
+    }
+    analytics = {
+      env_name       = "analytics"
+      subnet_zones   = "ru-central1-a"
+      instance_name  = "web"
+      instance_count = 1
+      image_family   = "ubuntu-2004-lts"
+      public_ip      = true
+    }
+  }
+}
 
+# for templatefile
+variable packages {
+  type    = list
+  default = []
+}
+
+variable username {
+  type    = list
+  default = "ubuntu"
+}

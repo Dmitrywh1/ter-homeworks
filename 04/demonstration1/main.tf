@@ -44,7 +44,16 @@ module "example-vm" {
     user-data          = data.template_file.cloudinit.rendered #Для демонстрации №3
     serial-port-enable = 1
   }
+}
 
+data template_file "userdata" {
+  template = file("${path.module}/templates/userdata.yaml")
+
+  vars = {
+    username           = var.username
+    ssh_public_key     = file(local.ssh_public_key)
+    packages           = jsonencode(var.packages)
+  }
 }
 
 #Пример передачи cloud-config в ВМ для демонстрации №3
