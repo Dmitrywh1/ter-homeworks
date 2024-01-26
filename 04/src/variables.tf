@@ -84,10 +84,10 @@ variable "vm" {
   }
 }
 
-# for templatefile
+# for templatefile cloud-init
 variable packages {
-  type    = list(string)
-  default = ["nginx"]
+  type    = string
+  default = "nginx"
 }
 
 variable userdata {
