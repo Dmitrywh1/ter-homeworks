@@ -1,9 +1,10 @@
 module "test_vpc" {
   source       = "./vpc"
   env_name     = "develop"
-  zone = "ru-central1-a"
-  cidr = "10.0.1.0/24"
+  vpc_zone     = "ru-central1-a"
+  vpc_cidr     = "10.0.1.0/24"
 }
+
 
 ##создаем облачную сеть
 #resource "yandex_vpc_network" "develop" {
