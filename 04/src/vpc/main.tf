@@ -61,7 +61,7 @@ resource "yandex_vpc_network" "develop" {
 resource "yandex_vpc_subnet" "develop" {
   name           = var.env_name == null ? "${var.subnet.sub.name}" : "${var.env_name}-${var.subnet.sub.name}"
   zone           = var.env_name == null ? "${var.subnet.sub.zone}" : "${var.env_name}-${var.subnet.sub.zone}"
-  network_id     = var.subnet.sub.network_id
+  network_id     = yandex_vpc_network.develop.id
   v4_cidr_blocks = [var.subnet.sub.v4_cidr_blocks]
 
    labels = {
