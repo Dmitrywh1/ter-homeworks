@@ -1,6 +1,6 @@
 variable "vpc_name" {
   type = string
-  default = "test"
+  default = "develop"
 }
 
 variable "labels" {
