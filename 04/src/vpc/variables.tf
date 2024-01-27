@@ -27,6 +27,13 @@ variable "labels" {
 }
 
 variable "env_name" {
-  type    = string
-  default = null
+  description = "Environment name"
+}
+
+variable "vpc_zone" {
+  description = "VPC zone"
+}
+
+variable "vpc_cidr" {
+  description = "VPC CIDR"
 }
