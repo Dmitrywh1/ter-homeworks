@@ -10,8 +10,8 @@ module "marketing" {
   source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=1.0.0"
   env_name       = var.vm.analytics.env_name
   network_id     = module.vpc.vpc_subnet.name
-  subnet_zones   = module.vpc.vpc_subnet.zone
-  subnet_ids     = module.vpc.vpc_subnet.id
+  subnet_zones   = [module.vpc.vpc_subnet.zone]
+  subnet_ids     = [module.vpc.vpc_subnet.id]
   instance_name  = var.vm.analytics.instance_name
   instance_count = var.vm.analytics.instance_count
   image_family   = var.vm.analytics.image_family
@@ -32,8 +32,8 @@ module "analytics" {
   source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=1.0.0"
   env_name       = var.vm.marketing.env_name
   network_id     = module.vpc.vpc_subnet.name
-  subnet_zones   = module.vpc.vpc_subnet.zone
-  subnet_ids     = module.vpc.vpc_subnet.id
+  subnet_zones   = [module.vpc.vpc_subnet.zone]
+  subnet_ids     = [module.vpc.vpc_subnet.id]
   instance_name  = var.vm.marketing.instance_name
   instance_count = var.vm.marketing.instance_count
   image_family   = var.vm.marketing.image_family
