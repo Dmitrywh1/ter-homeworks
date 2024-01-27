@@ -14,7 +14,7 @@ locals {
   }
 }
 
-resource "yandex_vpc_network" "develop-02" {
+resource "yandex_vpc_network" "develop" {
   name = var.vpc_name
 }
 
