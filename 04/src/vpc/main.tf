@@ -33,7 +33,7 @@ resource "yandex_vpc_network" "develop" {
 resource "yandex_vpc_subnet" "subnet" {
   count          = length(var.subnets)
   name           = var.env_name == null ? "${var.subnets[count.index].zone}" : "${var.env_name}-${var.subnets[count.index].zone}"
-  zone           = var.subnets.zone
+  zone           = var.subnets[count.index].zone
   network_id     = yandex_vpc_network.develop.id
   v4_cidr_blocks = [var.subnets[count.index].cidr]
 
