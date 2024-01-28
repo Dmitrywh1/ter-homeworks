@@ -10,7 +10,7 @@ module "vpc_prod" {
 
 module "vpc_dev" {
   source       = "./vpc"
-  env_name     = "develop"
+  env_name     = "stage"
   subnets = [
     { zone = "ru-central1-a", cidr = "10.0.1.0/24" },
   ]
