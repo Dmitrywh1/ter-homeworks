@@ -23,3 +23,11 @@ variable "vpc_cidr" {
   default = ["10.0.1.0/24"]
 }
 
+variable "subnets" {
+  description = "List of subnets"
+  type        = list(object({
+    zone = string
+    cidr = string
+  }))
+  default = []
+}
