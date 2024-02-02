@@ -1,7 +1,9 @@
 module "mysql" {
   source       = "./mysql"
   mysql_cluster = {
-      name = "tt"
+      first = {
+        name = "tt"
+      }
     }
 }
 

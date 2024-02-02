@@ -8,30 +8,30 @@ terraform {
 }
 
 resource "yandex_mdb_mysql_cluster" "foo" {
-  name        = var.mysql_cluster.name
-  environment = var.mysql_cluster.environment
+  name        = var.mysql_cluster.first.name
+  environment = var.mysql_cluster.first.environment
   network_id  = yandex_vpc_network.foo.id
-  version     = var.mysql_cluster.version
+  version     = var.mysql_cluster.first.version
 
   resources {
-    resource_preset_id = var.mysql_cluster.resource_preset_id
-    disk_type_id       = var.mysql_cluster.disk_type_id
-    disk_size          = var.mysql_cluster.disk_size
+    resource_preset_id = var.mysql_cluster.first.resource_preset_id
+    disk_type_id       = var.mysql_cluster.first.disk_type_id
+    disk_size          = var.mysql_cluster.first.disk_size
   }
 
   maintenance_window {
-    type = var.mysql_cluster.type
-    day  = var.mysql_cluster.day
-    hour = var.mysql_cluster.hour
+    type = var.mysql_cluster.first.type
+    day  = var.mysql_cluster.first.day
+    hour = var.mysql_cluster.first.hour
   }
 
   host {
-    zone      = var.mysql_cluster.zone_a
+    zone      = var.mysql_cluster.first.zone_a
     subnet_id = yandex_vpc_subnet.foo.id
   }
 
   host {
-    zone      = var.mysql_cluster.zone_b
+    zone      = var.mysql_cluster.first.zone_b
     subnet_id = yandex_vpc_subnet.bar.id
   }
 }
