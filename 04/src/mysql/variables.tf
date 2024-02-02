@@ -1,3 +1,8 @@
+variable "mysql_name_cluster" {
+  type = string
+  default = ""
+}
+
 variable "mysql_cluster" {
   type = map(object({
     name               = string

@@ -8,7 +8,7 @@ terraform {
 }
 
 resource "yandex_mdb_mysql_cluster" "foo" {
-  name        = var.mysql_cluster.first.name
+  name        = var.mysql_name_cluster
   environment = var.mysql_cluster.first.environment
   network_id  = yandex_vpc_network.foo.id
   version     = var.mysql_cluster.first.version

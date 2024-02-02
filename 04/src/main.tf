@@ -1,10 +1,6 @@
 module "mysql" {
   source       = "./mysql"
-  mysql_cluster = {
-      first = {
-        name = "tt"
-      }
-    }
+  mysql_name_cluster = "ttt"
 }
 
 #module "vpc_prod" {
