@@ -18,3 +18,9 @@ output "vpc_subnet" {
     id         = yandex_vpc_subnet.subnet[*].id
   }
 }
+
+output "vpc" {
+  value = {
+    name       = yandex_vpc_network.develop.id
+  }
+}

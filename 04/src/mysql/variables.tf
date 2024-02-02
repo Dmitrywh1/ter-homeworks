@@ -49,3 +49,18 @@ variable "vpc_bar" {
     v4_cidr_blocks = "10.2.0.0/24"
   }
 }
+
+variable "mysql_vpc" {
+  type = string
+  default = ""
+}
+
+variable "mysql_vpc_subnet_a" {
+  type = string
+  default = ""
+}
+
+variable "mysql_vpc_subnet_b" {
+  type = string
+  default = ""
+}
