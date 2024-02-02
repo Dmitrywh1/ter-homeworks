@@ -21,6 +21,6 @@ output "vpc_subnet" {
 
 output "vpc" {
   value = {
-    name       = yandex_vpc_network.develop.id
+    id       = yandex_vpc_network.develop.id
   }
 }

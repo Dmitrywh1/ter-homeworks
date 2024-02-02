@@ -10,7 +10,7 @@ terraform {
 resource "yandex_mdb_mysql_cluster" "foo" {
   name        = var.mysql_name_cluster
   environment = var.mysql_cluster.first.environment
-  network_id  = yandex_vpc_network.foo.id
+  network_id  = var.mysql_vpc
   version     = var.mysql_cluster.first.version
 
   resources {
@@ -27,12 +27,12 @@ resource "yandex_mdb_mysql_cluster" "foo" {
 
   host {
     zone      = var.mysql_cluster.first.zone_a
-    subnet_id = yandex_vpc_subnet.foo.id
+    subnet_id = var.mysql_vpc_subnet_a
   }
 
   host {
     zone      = var.mysql_cluster.first.zone_b
-    subnet_id = yandex_vpc_subnet.bar.id
+    subnet_id = var.mysql_vpc_subnet_b
   }
 }
 
