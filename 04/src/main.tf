@@ -1,10 +1,10 @@
-#module "mysql" {
-#  source       = "./mysql"
-#  mysql_name_cluster = "ttt"
-#  mysql_vpc = module.vpc_prod.vpc.id
-#  mysql_vpc_subnet_a = module.vpc_prod.vpc_subnet[0].id
-#  mysql_vpc_subnet_b = module.vpc_prod.vpc_subnet[1].id
-#}
+module "mysql" {
+  source       = "./mysql"
+  mysql_name_cluster = "ttt"
+  mysql_vpc = module.vpc_prod.vpc.id
+  mysql_vpc_subnet_a = module.vpc_prod.vpc_subnet[0].id
+  mysql_vpc_subnet_b = module.vpc_prod.vpc_subnet[1].id
+}
 
 module "vpc_prod" {
   source       = "./vpc"
