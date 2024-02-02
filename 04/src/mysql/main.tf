@@ -36,16 +36,16 @@ resource "yandex_mdb_mysql_cluster" "foo" {
   }
 }
 
-resource "yandex_vpc_network" "foo" {}
-
-resource "yandex_vpc_subnet" "foo" {
-  zone           = var.vpc_foo.zone
-  network_id     = "${yandex_vpc_network.foo.id}"
-  v4_cidr_blocks = [var.vpc_foo.v4_cidr_blocks]
-}
-
-resource "yandex_vpc_subnet" "bar" {
-  zone           = var.vpc_bar.zone
-  network_id     = "${yandex_vpc_network.foo.id}"
-  v4_cidr_blocks = [var.vpc_bar.v4_cidr_blocks]
-}
+#resource "yandex_vpc_network" "foo" {}
+#
+#resource "yandex_vpc_subnet" "foo" {
+#  zone           = var.vpc_foo.zone
+#  network_id     = "${yandex_vpc_network.foo.id}"
+#  v4_cidr_blocks = [var.vpc_foo.v4_cidr_blocks]
+#}
+#
+#resource "yandex_vpc_subnet" "bar" {
+#  zone           = var.vpc_bar.zone
+#  network_id     = "${yandex_vpc_network.foo.id}"
+#  v4_cidr_blocks = [var.vpc_bar.v4_cidr_blocks]
+#}
