@@ -1,6 +1,6 @@
 module "mysql" {
   source       = "./mysql"
-  name     = "test"
+  mysql_cluster.name     = "test"
 }
 
 #module "vpc_prod" {
