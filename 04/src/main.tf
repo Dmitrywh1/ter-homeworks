@@ -2,8 +2,8 @@ module "mysql" {
   source       = "./mysql"
   mysql_name_cluster = "ttt"
   mysql_vpc = module.vpc_prod.vpc.id
-  mysql_vpc_subnet_a = module.vpc_prod.vpc_subnet[0].id
-  mysql_vpc_subnet_b = module.vpc_prod.vpc_subnet[1].id
+  mysql_vpc_subnet_a = module.vpc_prod.vpc_subnet.id[0]
+  mysql_vpc_subnet_b = module.vpc_prod.vpc_subnet.id[1]
 }
 
 module "vpc_prod" {
